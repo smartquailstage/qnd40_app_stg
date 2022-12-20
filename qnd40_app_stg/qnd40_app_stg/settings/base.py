@@ -128,7 +128,7 @@ MIDDLEWARE = [
     #'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
-ROOT_URLCONF = 'qnd30_app_stg.urls'
+ROOT_URLCONF = 'qnd40_app_stg.urls'
 WAGTAILADMIN_BASE_URL ='app.smartquail.io'
 
 #WAGTAIL SETUPS
@@ -240,7 +240,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'qnd30_app_stg.wsgi.application'
+WSGI_APPLICATION = 'qnd40_app_stg.wsgi.application'
 
 WAGTAILADMIN_BASE_URL =  os.environ.get('DOMAINS')
 
