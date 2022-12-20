@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-ENV_FILE_PATH = BASE_DIR / ".env_stage"
+ENV_FILE_PATH = BASE_DIR / ".env_dev"
 load_dotenv(str(ENV_FILE_PATH))
 
 DJANGO_SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY')
@@ -46,7 +46,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'baton',
-    #'account',
+    'account',
     #'courses',
     #'courses_exams',
     #'card_test',
@@ -81,21 +81,22 @@ INSTALLED_APPS = [
     'wagtailgmaps',
     #'django_social_share',
     'taggit',
-    #'webapp_0',
-    #'streams',
+    'webapp_0',
+    'streams',
     'widget_tweaks',
    #SMARTQUAIL-BUSINESS-CONSULTING
-    #'shop',
+    'shop',
     #'coupons',
     #'cart',
     #'todo_en_orden',
     #'coupons',
-    #'orders',
+    'orders',
     #'contracts',
     #'services',
-    #'cart',
+    'cart',
     #'cart_c',
-    #'payment',
+    'images',
+    'payment',
     #'django_phonenumbers',
     #'phonenumber_field',
     'social_django',
@@ -104,7 +105,7 @@ INSTALLED_APPS = [
     'embed_video',
     'qr_code',
     'storages',
-    #'actions',
+    'actions',
     'baton.autodiscover',   
     #'memcache_status',
     'rest_framework',
@@ -168,9 +169,9 @@ REDIS_DB =os.environ.get('REDIS_DB')
 #LOGIN_REDIRECT_URL = 'accounts:dashboard'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
-
-from django.urls import reverse_lazy
-LOGIN_REDIRECT_URL = reverse_lazy('course_list')
+LOGIN_REDIRECT_URL = 'dashboard'
+#from django.urls import reverse_lazy
+#LOGIN_REDIRECT_URL = reverse_lazy('course_list')
 
 
 
@@ -205,10 +206,10 @@ CELERY_TASK_SERIALIZER = 'json'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    #'account.authentication.EmailAuthBackend',
-    #'social_core.backends.facebook.FacebookOAuth2',
-    #'social_core.backends.twitter.TwitterOAuth',
-    #'social_core.backends.google.GoogleOAuth2',
+    'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
 # social auth settings
