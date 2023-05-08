@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-ENV_FILE_PATH = BASE_DIR / ".env_dev"
+ENV_FILE_PATH = BASE_DIR / ".env_stage"
 load_dotenv(str(ENV_FILE_PATH))
 
 DJANGO_SECRET_KEY= os.environ.get('DJANGO_SECRET_KEY')
@@ -82,6 +82,7 @@ INSTALLED_APPS = [
     #'django_social_share',
     'taggit',
     'webapp_0',
+    'django_social_share',
     'streams',
     'widget_tweaks',
    #SMARTQUAIL-BUSINESS-CONSULTING
